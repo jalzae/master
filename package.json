@@ -1,0 +1,17 @@
+{
+  "name": "mobile_test_webdriver",
+  "version": "1.0.0",
+  "description": "for exampling mobile test automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.18.2",
+    "@wdio/dot-reporter": "^8.17.0",
+    "@wdio/local-runner": "^8.18.2",
+    "@wdio/testingbot-service": "^8.18.2"
+  }
+}

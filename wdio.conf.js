@@ -1,43 +1,22 @@
 exports.config = {
-
-  /**
-   * specify test files
-   */
-  specs: [
-    './runner-specs/mocha.test.js'
-  ],
-
-  /**
-   * capabilities
-   */
-  capabilities: [{
-    name: 'My First App Test',
-    deviceName: 'Pixel 2',
-    platformName: 'Android',
-    version: '7.1',
-    app: 'https://testingbot.com/appium/sample.apk'
-  }],
-
-  /**
-   * test configurations
-   */
-  logLevel: 'silent',
-  coloredLogs: true,
-  screenshotPath: 'screenshots',
-  waitforTimeout: 10000,
-  framework: 'mocha',
-  services: [
-    ['testingbot']
-  ],
-  user: 'api_key',
-  key: 'api_secret',
-
-  reporters: ['dot'],
-  reporterOptions: {
-    outputDir: './'
-  },
-
-  mochaOpts: {
-    ui: 'bdd'
-  }
+    path: '/', // The default path for Appium
+    hostname: '192.168.43.33', // The host where Appium server is running
+    port: 4723, // The default port for Appium
+    specs: ['./test.js'], // Your test script file
+    capabilities: [
+        {
+            platformName: 'Android',
+            'appium:deviceName': 'U48TZ5YTKZOJCQ4D',
+            'appium:app': './sample.apk',
+            'appium:appPackage': 'com.sampleapp',
+            // 'appium:appActivity': '.Settings',
+            'appium:automationName': 'UiAutomator2',
+        },
+    ],
+    logLevel: 'error',
+    framework: 'mocha',
+    reporters: ['spec'],
+    mochaOpts: {
+        timeout: 60000,
+    },
 };

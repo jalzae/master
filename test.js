@@ -8,15 +8,14 @@ describe('Android Battery Test', () => {
 
   before(async () => {
     client = await remote({
-      path: '/', // The default path for Appium
-      hostname: '192.168.43.33', // The host where Appium server is running
-      port: 4723, // The default port for Appium
+      path: '/',
+      hostname: '192.168.43.33',
+      port: 4723,
       capabilities: {
         platformName: 'Android',
-        'appium:app': './sample.apk',
+        'appium:app': 'D:\\Project\\ExpressJs\\mobile_test_webdriver/sample.apk',
         'appium:deviceName': 'U48TZ5YTKZOJCQ4D',
         'appium:appPackage': 'com.sampleapp',
-        // 'appium:appActivity': '.Settings',
         'appium:automationName': 'UiAutomator2',
       },
       logLevel: 'error',
@@ -40,6 +39,7 @@ describe('Android Battery Test', () => {
 
     const sumElement = await client.$('~sum')
     const sum = await sumElement.getText()
+    console.log(`Got value ${sum}`)
     assert.equal(sum, '15') // 10 + 5
   })
 

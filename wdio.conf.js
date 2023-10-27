@@ -7,9 +7,8 @@ exports.config = {
         {
             platformName: 'Android',
             'appium:deviceName': 'U48TZ5YTKZOJCQ4D',
-            'appium:app': './sample.apk',
+            'appium:app': 'D:\\Project\\ExpressJs\\mobile_test_webdriver/sample.apk',
             'appium:appPackage': 'com.sampleapp',
-            // 'appium:appActivity': '.Settings',
             'appium:automationName': 'UiAutomator2',
         },
     ],
